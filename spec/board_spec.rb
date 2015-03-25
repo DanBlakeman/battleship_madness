@@ -22,6 +22,13 @@ describe Board do
   it 'places a ship in a cell' do
     board = Board.new { double :cell, mark: nil }
     expect(board.grid[:A][1]).to receive(:place)
-    board.place(:A, 1, :ship)
+    board.place_ship(:A, 1, :ship)
+  end
+
+  it 'returns a list of ships placed' do
+    board = Board.new { double :cell, mark: nil, content: nil }
+    ship = double :ship
+    allow(board.grid[:A][1]).to receive(:content) { ship }
+    expect(board.ships_on_board).to eq [ship]
   end
 end

@@ -10,5 +10,15 @@ class Board
     grid[column][row].hit
   end
 
-  def
+  def place_ship(column, row, ship)
+    grid[column][row].place(ship)
+  end
+
+  def ships_on_board
+    ships = []
+    grid.each do |_key, column|
+      column.each { |cell| ships <<  cell.content unless cell.content.nil? }
+    end
+    ships
+  end
 end
