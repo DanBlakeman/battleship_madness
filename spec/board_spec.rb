@@ -26,9 +26,9 @@ describe Board do
   end
 
   it 'returns a list of ships placed' do
-    board = Board.new { double :cell, mark: nil, content: nil }
+    board = Board.new { double :cell, place: nil }
     ship = double :ship
-    allow(board.grid[:A][1]).to receive(:content) { ship }
+    board.place_ship(:A, 1, ship)
     expect(board.ships_on_board).to eq [ship]
   end
 end
