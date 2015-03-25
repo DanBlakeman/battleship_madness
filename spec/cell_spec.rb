@@ -21,8 +21,8 @@ describe Cell do
 
   it 'can hit the ship if there is one there' do
     ship = double :ship
-    subject.place(ship)
     expect(ship).to receive(:hit)
+    subject.place(ship)
     subject.hit
   end
 end
