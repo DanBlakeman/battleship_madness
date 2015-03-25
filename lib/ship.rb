@@ -14,7 +14,7 @@ class Ship
     hits >= size
   end
 
-  def inspect
-    '"~"'
+  def to_s
+    '~'
   end
 end
