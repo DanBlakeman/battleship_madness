@@ -13,4 +13,8 @@ class Ship
   def sunk?
     hits >= size
   end
+
+  def inspect
+    '"~"'
+  end
 end
